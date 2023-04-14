@@ -1,18 +1,31 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Todoist Markdown Export",
   "version": "1.0",
   "description": "Export Todo List to Markdown Text to your clipboard",
-  "icons": {
-    "16": "icon_16.png",
-    "48": "icon_48.png",
-    "128": "icon_128.png"
-  },
+  "icons": [
+    {
+      "src": "icon_16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
   "permissions": ["activeTab"],
   "content_scripts": [
     {
       "matches": ["https://todoist.com/app/*"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_idle"
     }
   ]
 }
